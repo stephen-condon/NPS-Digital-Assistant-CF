@@ -29,7 +29,10 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 	SOFTWARE.
 	
-	TODO:
+	Modified by: Stephen Condon, 6-30-2017
+	
+	- Ampersands (&) in the SSML returned to Alexa causes processing to stop. Added
+		a replace() method to strip those out, and replace with 'and'
 	 
 	--->
 
