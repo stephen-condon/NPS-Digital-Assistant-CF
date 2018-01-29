@@ -31,6 +31,7 @@ Sample invocation of the CF-Alexa Framework
 	}>
 	
 	<cfset this.api_base="http://developer.nps.gov/api/v1/" />
+	<!--- Update the dyk_base URI to point at wherever you host this JSON --->
 	<cfset this.dyk_base = "http://developer.nps.gov/assets/components/alexa/DYK.json" />
 	<cfset this.api_headers = { "Authorization":"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" } />
 
@@ -1871,6 +1872,10 @@ Sample invocation of the CF-Alexa Framework
 	
 	<cffunction name="replaceSubstringsForVoice" access="private" returntype="string">
 		<cfargument name="targetString" type="string" required="yes" default="" />
+		
+		<!--- Handles special treatment of Alexa's pronunciation of particular terms
+			TODO: Switch to use SSML phonetic spellings
+		--->
 		
 		<cfset local.targetString = arguments.targetString />
 		<cfset local.listOfReplacements = { 
